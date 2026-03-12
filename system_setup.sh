@@ -53,12 +53,19 @@ fi
 # -----------------------------
 BREW_PACKAGES=(
   fzf
+  fish
   ripgrep
   fd
   neovim
   tmux
   node
+  ast-grep
   zsh-autosuggestions
+  luarocks
+  lazygit
+  imagemagick
+  tectonic
+  mermaid-cli
 )
 
 echo "Installing brew packages..."
@@ -95,6 +102,10 @@ if [[ "$SHELL" != "$(which zsh)" ]]; then
   echo "Setting Zsh as default shell..."
   chsh -s "$(which zsh)"
 fi
+
+# Remap keys
+setxkbmap -option caps:none
+xmodmap -e "keycode 66 = F7"
 
 # ----------------------------
 # STOW DOTFILES
