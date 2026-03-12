@@ -17,6 +17,9 @@ APT_PACKAGES=(
   zsh
   kitty
   stow
+  rofi
+  i3
+  polybar
 )
 
 echo "Installing apt packages..."
