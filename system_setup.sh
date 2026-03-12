@@ -55,6 +55,7 @@ BREW_PACKAGES=(
   neovim
   tmux
   node
+  zsh-autosuggestions
 )
 
 echo "Installing brew packages..."
