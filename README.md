@@ -1,0 +1,5 @@
+- `sudo apt update`
+- `sudo apt install git`
+- `git clone https://github.com/Mantis4542/dotfiles.git`
+- `chmod +x ~/dotfiles/system_setup.sh`
+- `~/dotfiles/system_setup.sh`
