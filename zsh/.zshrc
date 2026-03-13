@@ -118,6 +118,5 @@ export NVM_DIR="$HOME/.nvm"
 
 ## Tmux on startup
 if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
-  tmux attach -t main || tmux new -s main
+  exec tmux new -A -s main
 fi
-
