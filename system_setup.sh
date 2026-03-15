@@ -20,6 +20,7 @@ APT_PACKAGES=(
   rofi
   i3
   polybar
+  inotify-tools
 )
 
 echo "Installing apt packages..."
@@ -66,6 +67,7 @@ BREW_PACKAGES=(
   imagemagick
   tectonic
   mermaid-cli
+  anomalyco/tap/opencode
 )
 
 echo "Installing brew packages..."
@@ -81,7 +83,7 @@ done
 # NPM INSTALL
 # -----------------------------
 echo "installing npm packages"
-npm install -g typescript tailwindcss eslint prettier
+npm install -g typescript tailwindcss eslint prettier tree-sitter-cli neovim
 echo "npm packages installed"
 
 # -----------------------------
@@ -116,3 +118,15 @@ cd ~/dotfiles
 stow */
 
 echo "Stowed dotfiles"
+
+if fc-list | grep -qi "JetBrainsMono Nerd Font"; then
+  echo "JetBrainsMono Nerd Font already installed"
+else
+  echo "Installing JetBrainsMono Nerd Font..."
+  mkdir -p ~/.local/share/fonts &&
+    cd ~/.local/share/fonts &&
+    wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip &&
+    unzip JetBrainsMono.zip &&
+    rm JetBrainsMono.zip &&
+    fc-cache -fv
+fi
