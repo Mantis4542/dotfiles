@@ -115,14 +115,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # zsh-autosuggestions
-# source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# if [[ "$TERM_PROGRAM" == "vscode" ]]; then
-# #   source ~/.zshrc_vscode
-# else
-#   source ~/.zshrc_main
-# fi
-# Tmux on startup
 if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ] && [[ "$TERM_PROGRAM" != "vscode" ]]; then
   exec tmux new -A -s main
 fi
